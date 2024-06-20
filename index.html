@@ -178,8 +178,9 @@
                 decoration: formData.getAll('decoration'),
                 requirement: formData.getAll('requirement'),
             };
-
-            fetch(`${ip}:8080/scrape`, {
+            console.table(params);
+            
+            fetch(`${ip}:8080/api/scrape`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
