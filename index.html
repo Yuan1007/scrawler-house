@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent House Scraper</title>
+</head>
+<body>
+    <h1>Rent House Scraper</h1>
+
+    <div>
+        <label for="region">Region:</label>
+        <select id="region" name="region" multiple>
+            <option value="大安區">大安區</option>
+            <option value="內湖區">內湖區</option>
+            <option value="士林區">士林區</option>
+            <option value="文山區">文山區</option>
+            <option value="北投區">北投區</option>
+            <option value="中山區">中山區</option>
+            <option value="信義區">信義區</option>
+            <option value="松山區">松山區</option>
+            <option value="萬華區">萬華區</option>
+            <option value="中正區">中正區</option>
+            <option value="大同區">大同區</option>
+            <option value="南港區">南港區</option>
+        </select>
+    </div>
+    <div>
+        <label for="rentType">Rent Type:</label>
+        <select id="rentType" name="rentType" multiple>
+            <option value="整層住家">整層住家</option>
+            <option value="獨立套房">獨立套房</option>
+            <option value="分租套房">分租套房</option>
+            <option value="雅房">雅房</option>
+            <option value="車位">車位</option>
+            <option value="其他">其他</option>
+        </select>
+    </div>
+    <div>
+        <label for="price">Price:</label>
+        <select id="price" name="price" multiple>
+            <option value="5000元以下">5000元以下</option>
+            <option value="5000元以下">5000元以下</option>
+            <option value="5000-10000元">5000-10000元</option>
+            <option value="10000-20000元">10000-20000元</option>
+            <option value="20000-30000元">20000-30000元</option>
+            <option value="40000元以上">40000元以上</option>
+        </select>
+    </div>
+    <div>
+        <label for="filter">filter:</label>
+        <select id="filter" name="filter" multiple>
+            <option value="新上架">新上架</option>
+            <option value="近捷運">近捷運</option>
+            <option value="可養寵物">可養寵物</option>
+            <option value="可開伙">可開伙</option>
+            <option value="有車位">有車位</option>
+            <option value="有電梯">有電梯</option>
+            <option value="有陽台">有陽台</option>
+            <option value="可短期租賃">可短期租賃</option>
+        </select>
+    </div>
+    <div>
+        <label for="type">型態:</label>
+        <select id="type" name="type" multiple>
+            <option value="公寓">公寓</option>
+            <option value="電梯大樓">電梯大樓</option>
+            <option value="透天厝">透天厝</option>
+            <option value="別墅">別墅</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="ping">坪數:</label>
+        <select id="ping" name="ping" multiple>
+            <option value="不限">不限</option>
+            <option value="10坪以下">10坪以下</option>
+            <option value="10-20坪">10-20坪</option>
+            <option value="20-30坪">20-30坪</option>
+            <option value="30-40坪">30-40坪</option>
+            <option value="40-50坪">40-50坪</option>
+            <option value="50坪以上">50坪以上</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="floor">樓層:</label>
+        <select id="floor" name="floor" multiple>
+            <option value="不限">不限</option>
+            <option value="1層">1層</option>
+            <option value="2-6層">2-6層</option>
+            <option value="6-12層">6-12層</option>
+            <option value="12層以上">12層以上</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="bathroom">衛浴:</label>
+        <select id="bathroom" name="bathroom" multiple>
+            <option value="不限">不限</option>
+            <option value="1衛">1衛</option>
+            <option value="2衛">2衛</option>
+            <option value="3衛">3衛</option>
+            <option value="4衛及以上">4衛及以上</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="equipment">設備:</label>
+        <select id="equipment" name="equipment" multiple>
+            <option value="不限">不限</option>
+            <option value="有冷氣">有冷氣</option>
+            <option value="有洗衣機">有洗衣機</option>
+            <option value="有冰箱">有冰箱</option>
+            <option value="有熱水器">有熱水器</option>
+            <option value="有天然瓦斯">有天然瓦斯</option>
+            <option value="有網路">有網路</option>
+            <option value="床">床</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="decoration">裝潢:</label>
+        <select id="decoration" name="decoration" multiple>
+            <option value="不限">不限</option>
+            <option value="新裝潢">新裝潢</option>
+            <option value="中檔裝潢">中檔裝潢</option>
+            <option value="高檔裝潢">高檔裝潢</option>
+        </select>
+    </div>
+    
+    <div>
+        <label for="requirement">須知:</label>
+        <select id="requirement" name="requirement" multiple>
+            <option value="不限">不限</option>
+            <option value="男女皆可">男女皆可</option>
+            <option value="限女生">限女生</option>
+            <option value="限男生">限男生</option>
+            <option value="排除頂樓加蓋">排除頂樓加蓋</option>
+        </select>
+    </div>
+    <button id="scrapeButton">Start Scraping</button>
+    <table id="rentHouseTable" border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Tag</th>
+                <th>Style</th>
+                <th>Area</th>
+                <th>Subway</th>
+                <th>Bus</th>
+                <th>Msg</th>
+                <th>Price</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+
+    <script>
+        const ip = '118.150.108.41'
+        function submitForm() {
+            const form = document.getElementById('houseForm');
+            const formData = new FormData(form);
+
+            const params = {
+                region: formData.getAll('region'),
+                rentType: formData.getAll('rentType'),
+                price: formData.getAll('price'),
+                filter: formData.getAll('filter'),
+                type: formData.getAll('type'),
+                ping: formData.getAll('ping'),
+                floor: formData.getAll('floor'),
+                bathroom: formData.getAll('bathroom'),
+                equipment: formData.getAll('equipment'),
+                decoration: formData.getAll('decoration'),
+                requirement: formData.getAll('requirement'),
+            };
+
+            fetch(`${ip}:8080/scrape`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(params)
+            })
+            .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('rentHouseTable').getElementsByTagName('tbody')[0];
+                    tableBody.innerHTML = ''; // Clear existing rows
+
+                    data.forEach(rentHouse => {
+                        const row = tableBody.insertRow();
+                        row.insertCell(0).innerText = rentHouse.title;
+                        row.insertCell(1).innerText = rentHouse.tag;
+                        row.insertCell(2).innerText = rentHouse.style;
+                        row.insertCell(3).innerText = rentHouse.area;
+                        row.insertCell(4).innerText = rentHouse.subway;
+                        row.insertCell(5).innerText = rentHouse.bus;
+                        row.insertCell(6).innerText = rentHouse.msg;
+                        row.insertCell(7).innerText = rentHouse.price;
+                        row.insertCell(7).innerText = rentHouse.url;
+                        const urlCell = row.insertCell(8);
+                        const link = document.createElement('a');
+                        link.href = rentHouse.url;
+                        link.innerText = 'Link';
+                        link.target = '_blank';
+                        urlCell.appendChild(link);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
