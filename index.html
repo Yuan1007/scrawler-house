@@ -156,7 +156,8 @@
 
 
     <script>
-        const ip = '118.150.108.41'
+        const API_BASE_URL = "http://118.150.108.41:8080/api";  // 设置你的后端 API 基础 URL
+
         function submitForm() {
             const form = document.getElementById('filterForm');
             const formData = new FormData(form);
@@ -176,7 +177,7 @@
             };
             console.table(params);
 
-            fetch(`${ip}:8080/api/scrape`, {
+            fetch(`${API_BASE_URL}/scrape`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
